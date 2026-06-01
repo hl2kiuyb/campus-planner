@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: campus_planner
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - campus-planner-db:/var/lib/postgresql/data
+
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/campus_planner
+      PGSSLMODE: disable
+      NODE_ENV: production
+      PORT: 8080
+      API_PORT: 3001
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  campus-planner-db:
