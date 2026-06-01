@@ -2,6 +2,7 @@ services:
   - type: web
     name: campus-planner
     runtime: docker
+    plan: free
     envVars:
       - key: NODE_ENV
         value: production
@@ -12,3 +13,4 @@ services:
 
 databases:
   - name: campus-planner-db
+    plan: free
