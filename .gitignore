@@ -5,3 +5,6 @@ coverage
 .env.local
 .DS_Store
 npm-debug.log*
+AGENTS.md
+AI_CONTEXT.md
+update-ai-context.ps1
