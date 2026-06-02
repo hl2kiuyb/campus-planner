@@ -136,6 +136,17 @@ button:disabled {
   color: var(--accent);
 }
 
+.icon-button.complete {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  color: var(--accent);
+}
+
+.icon-button.complete:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -230,6 +241,10 @@ button:disabled {
 .select-field select,
 .search-field input {
   padding: 10px 12px;
+}
+
+.search-field input {
+  padding-left: 48px;
 }
 
 .field textarea {

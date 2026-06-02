@@ -453,7 +453,7 @@ export default function App() {
                 </div>
                 <div className="item-actions">
                   <button
-                    className="icon-button"
+                    className={`icon-button ${item.status === "done" ? "complete" : ""}`}
                     type="button"
                     onClick={() => toggleDone(item)}
                     title={item.status === "done" ? "완료 취소" : "완료"}
